@@ -29,11 +29,12 @@ public class Hand : MonoBehaviour
         Vector2 mouseScreenPos = _mouseAction.ReadValue<Vector2>();
         Vector2 mouseFollowPosition = _perspectiveCamera.ScreenToWorldPoint(mouseScreenPos);
 
+        Vector2 centerPoint = HoldJoint.transform.position;
+
         Vector2 targetPosition = mouseFollowPosition;
         if (LockYMovement)
-            targetPosition.y = MoveRigidbody.position.y;
+            targetPosition.y = centerPoint.y;
 
-        Vector2 centerPoint = HoldJoint.transform.position;
         Vector2 positionOffset = MoveRigidbody.position - centerPoint;
 
         Vector2 diffVector = targetPosition - centerPoint;
