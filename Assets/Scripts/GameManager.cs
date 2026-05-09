@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             _ = Hand.SetShowing(false);
             EndButton.gameObject.SetActive(true);
 
-            _currentScore = CastleHeight.GetWorldHeightOfCastle() / 3f;
+            _currentScore = CastleHeight.GetWorldHeightOfCastle();
 
             int feet = Mathf.FloorToInt(_currentScore);
             int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         if (CurrentState != State.Playing)
             return;
 
-        _currentScore = CastleHeight.GetWorldHeightOfCastle() / 3f;
+        _currentScore = CastleHeight.GetWorldHeightOfCastle();
 
         int feet = Mathf.FloorToInt(_currentScore);
         int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);

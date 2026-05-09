@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1366672939387318067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2326057456514860294}
+  m_Layer: 7
+  m_Name: PinchTarget (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2326057456514860294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366672939387318067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18, y: -0.574, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1503454096678213175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4834895642267726423
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,9 +109,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.26660156, y: 0.45703125}
-      - {x: 0.2685547, y: 0.6035156}
-      - {x: 0.2685547, y: 0.69921875}
+    - - {x: 0.25828597, y: 0.602068}
+      - {x: 0.26013723, y: 0.69921875}
       - {x: 0.2626953, y: 0.7207031}
       - {x: 0.24902344, y: 0.734375}
       - {x: 0.19628906, y: 0.7363281}
@@ -101,15 +131,42 @@ PolygonCollider2D:
       - {x: -0.17480469, y: 0.74609375}
       - {x: -0.19238281, y: 0.7480469}
       - {x: -0.24902344, y: 0.7480469}
-      - {x: -0.25878906, y: 0.7441406}
-      - {x: -0.2685547, y: 0.70703125}
-      - {x: -0.2685547, y: -0.7441406}
-      - {x: -0.26464844, y: -0.7480469}
-      - {x: 0.26464844, y: -0.7480469}
-      - {x: 0.26660156, y: -0.74609375}
-      - {x: 0.26660156, y: 0.00390625}
-      - {x: 0.26464844, y: 0.45507812}
+      - {x: -0.25247598, y: 0.75244737}
+      - {x: -0.2580329, y: 0.7049546}
+      - {x: -0.25897273, y: -0.72740036}
+      - {x: 0.2646894, y: -0.40709224}
   m_UseDelaunayMesh: 0
+--- !u!1 &6974297968556758388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5626081476194572640}
+  m_Layer: 7
+  m_Name: PinchTarget (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5626081476194572640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974297968556758388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17, y: -0.052, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1503454096678213175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6239423371926877363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,7 +226,7 @@ PrefabInstance:
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5738468995420484106, guid: f4d06d2daba3f924188afe3f66421173, type: 3}
+      objectReference: {fileID: -3267933273889238200, guid: ab5cacc1a6c18264d83a5b96f4cd7ade, type: 3}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -182,9 +239,39 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.545
       objectReference: {fileID: 0}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: PinchPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: PinchPoints.Array.data[0].Location
+      value: 
+      objectReference: {fileID: 4315721484212910502}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: PinchPoints.Array.data[1].Location
+      value: 
+      objectReference: {fileID: 5626081476194572640}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: PinchPoints.Array.data[1].Rotation
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: PinchPoints.Array.data[2].Location
+      value: 
+      objectReference: {fileID: 2326057456514860294}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: PinchPoints.Array.data[2].Rotation
+      value: 210
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5626081476194572640}
+    - targetCorrespondingSourceObject: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2326057456514860294}
     - targetCorrespondingSourceObject: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8333865060926734511}
@@ -193,5 +280,10 @@ PrefabInstance:
 --- !u!4 &1503454096678213175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+  m_PrefabInstance: {fileID: 6239423371926877363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4315721484212910502 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7886479888980413717, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
   m_PrefabInstance: {fileID: 6239423371926877363}
   m_PrefabAsset: {fileID: 0}

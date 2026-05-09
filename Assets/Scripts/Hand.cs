@@ -96,7 +96,10 @@ public class Hand : MonoBehaviour
             return;
         }
 
-        dropObject.transform.position = (Vector2)HoldJoint.transform.position - dropObject.PinchPositionOffset;
+        dropObject.RandomizePinchPoint();
+        dropObject.transform.rotation = Quaternion.Euler(0f, 0f, dropObject.PinchRotation);
+
+        dropObject.transform.position = (Vector2)HoldJoint.transform.position - dropObject.PinchOffset;
         dropObject.transform.SetParent(HoldJoint.transform);
         HoldJoint.connectedBody = dropObject.Rb2d;
         _attachedDropObject = dropObject;
