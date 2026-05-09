@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Misshy & Ryon
   productName: Lil' Timmy's First Sandcastle
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -44,8 +44,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 576
   defaultScreenHeight: 1024
-  defaultScreenWidthWeb: 576
-  defaultScreenHeightWeb: 1024
+  defaultScreenWidthWeb: 504
+  defaultScreenHeightWeb: 896
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 1
   unsupportedMSAAFallback: 0

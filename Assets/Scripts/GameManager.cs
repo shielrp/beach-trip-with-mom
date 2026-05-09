@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     public CastleHeightReader CastleHeight;
 
+    public AudioClip SandThumpClip;
+    public AudioClip PolaroidClip;
+
     InputAction _clickAction;
     bool _canClick = false;
 
@@ -40,6 +43,9 @@ public class GameManager : MonoBehaviour
 
     float _lastDropObjSpawnTime;
 
+    CinemachineImpulseSource _impulseSource;
+    AudioSource _audio;
+
     void Start()
     {
         _clickAction = InputSystem.actions.FindAction("Click");
@@ -51,6 +57,9 @@ public class GameManager : MonoBehaviour
         EndButton.onClick.AddListener(OnEndButtonPressed);
 
         DropObject.DropObjectSettled += OnDropObjectSettled;
+
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
+        _audio = GetComponent<AudioSource>();
     }
 
     void OnDestroy()
@@ -156,7 +165,8 @@ public class GameManager : MonoBehaviour
         if (Hand.HasAttachedDropObject || Time.time - _lastDropObjSpawnTime < 0.66f)
             return;
 
-        GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+        _impulseSource.GenerateImpulse();
+        _audio.PlayOneShot(SandThumpClip);
 
         await Awaitable.WaitForSecondsAsync(0.33f);
         await LoadNewDropObjectOntoHand();
@@ -213,5 +223,6 @@ public class GameManager : MonoBehaviour
         FinalHeightTmp.text = $"{feet}'{inches}\"";
 
         UiAnimator.Play("EndScreenIn");
+        _audio.PlayOneShot(PolaroidClip);
     }
 }
