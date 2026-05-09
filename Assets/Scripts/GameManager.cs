@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using MoreMountains.FeedbacksForThirdParty;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -155,6 +157,8 @@ public class GameManager : MonoBehaviour
     {
         if (Hand.HasAttachedDropObject || Time.time - _lastDropObjSpawnTime < 0.66f)
             return;
+
+        GetComponent<CinemachineImpulseSource>().GenerateImpulse();
 
         await Awaitable.WaitForSecondsAsync(0.33f);
         await LoadNewDropObjectOntoHand();
