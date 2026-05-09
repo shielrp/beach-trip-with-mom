@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.030999988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7042842171741854483, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Name
-      value: SandChunkBase Variant
+      value: SandWall2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886479888980413717, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

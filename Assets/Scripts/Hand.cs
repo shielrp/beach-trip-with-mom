@@ -1,4 +1,3 @@
-using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,10 +9,14 @@ public class Hand : MonoBehaviour
     public Rigidbody2D MoveRigidbody;
     public bool LockYMovement;
 
+    public bool HasAttachedDropObject => _attachedDropObject != null;
+
     bool _followMouse = true;
 
     InputAction _mouseAction;
     Camera _perspectiveCamera;
+
+    DropObject _attachedDropObject;
 
     void Start()
     {
@@ -47,5 +50,34 @@ public class Hand : MonoBehaviour
 
         Vector2 moveDelta = FollowSpeed * Time.fixedDeltaTime * diffVector.normalized;
         MoveRigidbody.position += moveDelta;
+    }
+
+    public void AttachDropObject(DropObject dropObject)
+    {
+        if (_attachedDropObject != null && _attachedDropObject != dropObject)
+        {
+            Debug.LogError($"Trying to attach DropObject {dropObject.gameObject.name} to Hand while it's already carrying" +
+                $" DropObject {_attachedDropObject.gameObject.name}");
+            return;
+        }
+
+        dropObject.transform.position = (Vector2)HoldJoint.transform.position - dropObject.PinchPositionOffset;
+        dropObject.transform.SetParent(HoldJoint.transform);
+        HoldJoint.connectedBody = dropObject.Rb2d;
+        _attachedDropObject = dropObject;
+
+        Debug.Log($"Attached object {_attachedDropObject.gameObject.name}");
+    }
+
+    public void DropObject()
+    {
+        if (_attachedDropObject == null) 
+            return;
+
+        Debug.Log($"Detached object {_attachedDropObject.gameObject.name}");
+
+        HoldJoint.connectedBody = null;
+        _attachedDropObject.transform.SetParent(null);
+        _attachedDropObject = null;
     }
 }
