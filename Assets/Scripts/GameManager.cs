@@ -19,16 +19,17 @@ public class GameManager : MonoBehaviour
     public TMP_Text TimeLeftTMP;
 
     public Button StartButton;
+    public Animator UiAnimator;
     public Button EndButton;
 
     public CastleHeightReader CastleHeight;
 
     InputAction _clickAction;
-    bool _canClick = true;
+    bool _canClick = false;
 
     public State CurrentState { get; private set; } = State.Starting;
 
-    int _roundTimeSeconds = 90;
+    int _roundTimeSeconds = 91;
 
     float _currentScore = 0;
     float _startTime;
@@ -70,12 +71,13 @@ public class GameManager : MonoBehaviour
         if (CurrentState == State.Starting)
         {
             //start game
-            CurrentState = State.Playing;
-            StartButton.gameObject.SetActive(false);
-
             TimeLeftTMP.text = _roundTimeSeconds.ToString();
+            UiAnimator.Play("StartIScreenOut");
 
             _startTime = Time.time;
+            CurrentState = State.Playing;
+
+            Invoke(nameof(StartGame), 0.66f);
         }
 
         else if (CurrentState == State.Playing)
@@ -91,8 +93,14 @@ public class GameManager : MonoBehaviour
             int feet = Mathf.FloorToInt(_currentScore);
             int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
 
-            ScoreText.text = $"Height: {feet}' {inches}\"";
+            ScoreText.text = $"Height: {feet}'{inches}\"";
         }
+    }
+
+    void StartGame()
+    {
+        _canClick = true;
+        _ = LoadNewDropObjectOntoHand();
     }
 
     void Update()
@@ -105,7 +113,7 @@ public class GameManager : MonoBehaviour
         int feet = Mathf.FloorToInt(_currentScore);
         int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
 
-        ScoreText.text = $"Height: {feet}' {inches}\"";
+        ScoreText.text = $"height:{feet}' {inches}\"";
 
         float timeSpent = Time.time - _startTime;
 

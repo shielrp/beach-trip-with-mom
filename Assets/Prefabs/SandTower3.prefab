@@ -335,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 1457014831525930031}
     - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: PinchPoints.Array.data[1].Rotation
-      value: 270
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: PinchPoints.Array.data[2].Location
@@ -343,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 3905948969318973327}
     - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: PinchPoints.Array.data[2].Rotation
-      value: 160
+      value: 270
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
