@@ -25,12 +25,12 @@ public class GameManager : MonoBehaviour
 
     public State CurrentState { get; private set; } = State.Starting;
 
-    int _currentScore = 0;
+    float _currentScore = 0;
 
     void Start()
     {
         _clickAction = InputSystem.actions.FindAction("Click");
-        ScoreText.text = $"Score: 0";
+        ScoreText.text = $"Height: 0' 0\"";
         StartButton.onClick.AddListener(OnStartButtonPressed);
         EndButton.onClick.AddListener(OnEndButtonPressed);
     }
@@ -73,8 +73,12 @@ public class GameManager : MonoBehaviour
             _ = Hand.SetShowing(false);
             EndButton.gameObject.SetActive(true);
 
-            _currentScore = Mathf.RoundToInt(CastleHeight.GetWorldHeightOfCastle() * 100);
-            ScoreText.text = $"Score: {_currentScore}";
+            _currentScore = CastleHeight.GetWorldHeightOfCastle() / 3f;
+
+            int feet = Mathf.FloorToInt(_currentScore);
+            int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
+
+            ScoreText.text = $"Height: {feet}' {inches}\"";
         }
     }
 
@@ -83,8 +87,12 @@ public class GameManager : MonoBehaviour
         if (CurrentState != State.Playing)
             return;
 
-        _currentScore = Mathf.RoundToInt(CastleHeight.GetWorldHeightOfCastle() * 100);
-        ScoreText.text = $"Score: {_currentScore}";
+        _currentScore = CastleHeight.GetWorldHeightOfCastle() / 3f;
+
+        int feet = Mathf.FloorToInt(_currentScore);
+        int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
+
+        ScoreText.text = $"Height: {feet}' {inches}\"";
 
         if (!_canClick || !_clickAction.WasCompletedThisFrame())
             return;

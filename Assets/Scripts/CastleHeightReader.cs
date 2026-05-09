@@ -19,6 +19,6 @@ public class CastleHeightReader : MonoBehaviour
                 hieghestPoint = highest;
         }
 
-        return hieghestPoint - BaseWorldHeight;
+        return (hieghestPoint - BaseWorldHeight) / 2f;
     }
 }
