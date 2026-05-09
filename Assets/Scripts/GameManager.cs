@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //find an object and attach it
             DropObject newDrop = GetNextDropObjectPrefab();
             Hand.AttachDropObject(newDrop);
         }
