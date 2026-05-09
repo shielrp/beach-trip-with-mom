@@ -69,7 +69,7 @@ public class Hand : MonoBehaviour
             return;
 
         IsShowing = shouldShow;
-        float moveTime = 0.66f;
+        float moveTime = shouldShow ? 0.66f : 0f;
 
         if (shouldShow)
         {

@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     float _currentScore = 0;
     float _startTime;
 
+    float _lastDropObjSpawnTime;
+
     void Start()
     {
         _clickAction = InputSystem.actions.FindAction("Click");
@@ -49,6 +51,11 @@ public class GameManager : MonoBehaviour
         EndButton.onClick.AddListener(OnEndButtonPressed);
 
         DropObject.DropObjectSettled += OnDropObjectSettled;
+    }
+
+    void OnDestroy()
+    {
+        DropObject.DropObjectSettled -= OnDropObjectSettled;
     }
 
     void OnDropObjectSettled(DropObject obj)
@@ -142,15 +149,14 @@ public class GameManager : MonoBehaviour
         {
             Hand.DropObject();
         }
-        else
-        {
-            _ = LoadNewDropObjectOntoHand();
-        }
     }
 
     async Awaitable DelayedNewObject()
     {
-        await Awaitable.WaitForSecondsAsync(0.66f);
+        if (Hand.HasAttachedDropObject || Time.time - _lastDropObjSpawnTime < 0.66f)
+            return;
+
+        await Awaitable.WaitForSecondsAsync(0.33f);
         await LoadNewDropObjectOntoHand();
     }
 
@@ -172,6 +178,7 @@ public class GameManager : MonoBehaviour
 
     DropObject GetNextDropObjectPrefab()
     {
+        _lastDropObjSpawnTime = Time.time;
         return Instantiate(DropObjectPrefabs[UnityEngine.Random.Range(0, DropObjectPrefabs.Length)]);
     }
 
