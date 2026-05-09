@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DropObject : MonoBehaviour
 {
+    public static event Action<DropObject> DropObjectSettled;
+
     [Serializable]
     class PinchPoint
     {
@@ -26,6 +28,7 @@ public class DropObject : MonoBehaviour
     public Rigidbody2D Rb2d;
 
     bool _isFalling = false;
+    bool _isSettled = false;
     int _selectedPinchPoint;
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -33,7 +36,11 @@ public class DropObject : MonoBehaviour
         DropObject dropObject = collision.gameObject.GetComponent<DropObject>();
 
         if (dropObject != null || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
             _isFalling = false;
+            _isSettled = true;
+            DropObjectSettled?.Invoke(this);
+        }
     }
 
     public void Drop()
@@ -43,7 +50,7 @@ public class DropObject : MonoBehaviour
 
     public bool IsSettled()
     {
-        return !_isFalling;
+        return _isSettled;
     }
 
     public void RandomizePinchPoint()

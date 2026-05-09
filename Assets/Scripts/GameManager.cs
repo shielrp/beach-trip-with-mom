@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public Button StartButton;
     public Animator UiAnimator;
     public Button EndButton;
+    public TMP_Text FinalHeightTmp;
 
     public Image ScreenshotImage;
 
@@ -40,12 +41,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _clickAction = InputSystem.actions.FindAction("Click");
-        ScoreText.text = $"height: 0' 0\"";
+        ScoreText.text = $"height: 0'0\"";
 
         TimeSpan timeLeft = new TimeSpan(0, 0, _roundTimeSeconds);
         TimeLeftTMP.text = $"time until high tide: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
         StartButton.onClick.AddListener(OnStartButtonPressed);
         EndButton.onClick.AddListener(OnEndButtonPressed);
+
+        DropObject.DropObjectSettled += OnDropObjectSettled;
+    }
+
+    void OnDropObjectSettled(DropObject obj)
+    {
+        _ = DelayedNewObject();
     }
 
     void OnStartButtonPressed()
@@ -117,7 +125,7 @@ public class GameManager : MonoBehaviour
         int feet = Mathf.FloorToInt(_currentScore);
         int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
 
-        ScoreText.text = $"height:{feet}' {inches}\"";
+        ScoreText.text = $"height:{feet}'{inches}\"";
 
         float timeSpent = Time.time - _startTime;
 
@@ -138,6 +146,12 @@ public class GameManager : MonoBehaviour
         {
             _ = LoadNewDropObjectOntoHand();
         }
+    }
+
+    async Awaitable DelayedNewObject()
+    {
+        await Awaitable.WaitForSecondsAsync(0.66f);
+        await LoadNewDropObjectOntoHand();
     }
 
     async Awaitable LoadNewDropObjectOntoHand()
@@ -185,7 +199,10 @@ public class GameManager : MonoBehaviour
         Sprite spr = Sprite.Create(newScreenShot, new Rect(0, 0, newScreenShot.width, newScreenShot.height), new Vector2(0.5f, 0.5f));
         ScreenshotImage.sprite = spr;
 
+        int feet = Mathf.FloorToInt(_currentScore);
+        int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
+        FinalHeightTmp.text = $"{feet}'{inches}\"";
+
         UiAnimator.Play("EndScreenIn");
-        EndButton.gameObject.SetActive(true);
     }
 }
