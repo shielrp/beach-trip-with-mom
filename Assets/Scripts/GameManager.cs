@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     public DropObject[] DropObjectPrefabs;
 
     public TMP_Text ScoreText;
+    public TMP_Text TimeLeftTMP;
+
     public Button StartButton;
     public Button EndButton;
 
@@ -25,12 +28,18 @@ public class GameManager : MonoBehaviour
 
     public State CurrentState { get; private set; } = State.Starting;
 
+    int _roundTimeSeconds = 90;
+
     float _currentScore = 0;
+    float _startTime;
 
     void Start()
     {
         _clickAction = InputSystem.actions.FindAction("Click");
-        ScoreText.text = $"Height: 0' 0\"";
+        ScoreText.text = $"height: 0' 0\"";
+
+        TimeSpan timeLeft = new TimeSpan(0, 0, _roundTimeSeconds);
+        TimeLeftTMP.text = $"time left: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
         StartButton.onClick.AddListener(OnStartButtonPressed);
         EndButton.onClick.AddListener(OnEndButtonPressed);
     }
@@ -63,6 +72,10 @@ public class GameManager : MonoBehaviour
             //start game
             CurrentState = State.Playing;
             StartButton.gameObject.SetActive(false);
+
+            TimeLeftTMP.text = _roundTimeSeconds.ToString();
+
+            _startTime = Time.time;
         }
 
         else if (CurrentState == State.Playing)
@@ -93,6 +106,14 @@ public class GameManager : MonoBehaviour
         int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
 
         ScoreText.text = $"Height: {feet}' {inches}\"";
+
+        float timeSpent = Time.time - _startTime;
+
+        if (timeSpent > _roundTimeSeconds)
+            EndGame();
+
+        TimeSpan timeLeft = new TimeSpan(0, 0, Mathf.RoundToInt(_roundTimeSeconds - timeSpent));
+        TimeLeftTMP.text = $"time left: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
 
         if (!_canClick || !_clickAction.WasCompletedThisFrame())
             return;
@@ -125,14 +146,14 @@ public class GameManager : MonoBehaviour
 
     DropObject GetNextDropObjectPrefab()
     {
-        return Instantiate(DropObjectPrefabs[Random.Range(0, DropObjectPrefabs.Length)]);
+        return Instantiate(DropObjectPrefabs[UnityEngine.Random.Range(0, DropObjectPrefabs.Length)]);
     }
 
     public void EndGame()
     {
-        Debug.Log($"Game Over!");
         if (CurrentState == State.Playing)
         {
+            Debug.Log($"Game Over!");
             AdvanceState();
         }
     }
