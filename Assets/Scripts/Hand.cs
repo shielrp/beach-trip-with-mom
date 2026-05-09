@@ -1,3 +1,5 @@
+using DG.Tweening;
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,14 +11,19 @@ public class Hand : MonoBehaviour
     public Rigidbody2D MoveRigidbody;
     public bool LockYMovement;
 
+    public float HandHiddenHeight;
+    public float HandDefaultHeight;
+
     public bool HasAttachedDropObject => _attachedDropObject != null;
 
-    bool _followMouse = true;
+    bool _followMouse = false;
 
     InputAction _mouseAction;
     Camera _perspectiveCamera;
 
     DropObject _attachedDropObject;
+
+    public bool IsShowing { get; private set; } = false;
 
     void Start()
     {
@@ -30,6 +37,9 @@ public class Hand : MonoBehaviour
             return;
 
         Vector2 mouseScreenPos = _mouseAction.ReadValue<Vector2>();
+        if (mouseScreenPos.x < 0 || mouseScreenPos.x > Screen.width || mouseScreenPos.y < 0 || mouseScreenPos.y > Screen.height)
+            return;
+
         Vector2 mouseFollowPosition = _perspectiveCamera.ScreenToWorldPoint(mouseScreenPos);
 
         Vector2 centerPoint = HoldJoint.transform.position;
@@ -50,6 +60,30 @@ public class Hand : MonoBehaviour
 
         Vector2 moveDelta = FollowSpeed * Time.fixedDeltaTime * diffVector.normalized;
         MoveRigidbody.position += moveDelta;
+    }
+
+    public async Awaitable SetShowing(bool shouldShow)
+    {
+        if (shouldShow == IsShowing) 
+            return;
+
+        IsShowing = shouldShow;
+        float moveTime = 0.66f;
+
+        if (shouldShow)
+        {
+            float xTarget = _perspectiveCamera.ScreenToWorldPoint(_mouseAction.ReadValue<Vector2>()).x;
+            transform.position = transform.position.MMSetX(xTarget);
+        }
+
+        float targetHeight = shouldShow ? HandDefaultHeight : HandHiddenHeight;
+        transform.DOMoveY(targetHeight, moveTime).SetEase(Ease.OutQuint);
+        await Awaitable.WaitForSecondsAsync(moveTime);
+    }
+
+    public void SetActive(bool active)
+    {
+        _followMouse = active;
     }
 
     public void AttachDropObject(DropObject dropObject)
