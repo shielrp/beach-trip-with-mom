@@ -35,7 +35,7 @@ public class DropObject : MonoBehaviour
     {
         DropObject dropObject = collision.gameObject.GetComponent<DropObject>();
 
-        if (!_isSettled && (dropObject != null || collision.gameObject.layer == LayerMask.NameToLayer("Ground")))
+        if (_isFalling && !_isSettled && (dropObject != null || collision.gameObject.layer == LayerMask.NameToLayer("Ground")))
         {
             _isFalling = false;
             _isSettled = true;
