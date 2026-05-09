@@ -1,6 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,14 +14,41 @@ public class GameManager : MonoBehaviour
     public Hand Hand;
     public DropObject[] DropObjectPrefabs;
 
+    public TMP_Text ScoreText;
+    public Button StartButton;
+    public Button EndButton;
+
+    public CastleHeightReader CastleHeight;
+
     InputAction _clickAction;
     bool _canClick = true;
 
     public State CurrentState { get; private set; } = State.Starting;
 
+    int _currentScore = 0;
+
     void Start()
     {
         _clickAction = InputSystem.actions.FindAction("Click");
+        ScoreText.text = $"Score: 0";
+        StartButton.onClick.AddListener(OnStartButtonPressed);
+        EndButton.onClick.AddListener(OnEndButtonPressed);
+    }
+
+    void OnStartButtonPressed()
+    {
+        if (CurrentState != State.Starting)
+            return;
+
+        AdvanceState();
+    }
+
+    void OnEndButtonPressed()
+    {
+        if (CurrentState != State.Ending)
+            return;
+
+        ResetGame();
     }
 
     void ResetGame()
@@ -33,6 +62,7 @@ public class GameManager : MonoBehaviour
         {
             //start game
             CurrentState = State.Playing;
+            StartButton.gameObject.SetActive(false);
         }
 
         else if (CurrentState == State.Playing)
@@ -41,11 +71,21 @@ public class GameManager : MonoBehaviour
             CurrentState = State.Ending;
             Hand.SetActive(false);
             _ = Hand.SetShowing(false);
+            EndButton.gameObject.SetActive(true);
+
+            _currentScore = Mathf.RoundToInt(CastleHeight.GetWorldHeightOfCastle() * 100);
+            ScoreText.text = $"Score: {_currentScore}";
         }
     }
 
     void Update()
     {
+        if (CurrentState != State.Playing)
+            return;
+
+        _currentScore = Mathf.RoundToInt(CastleHeight.GetWorldHeightOfCastle() * 100);
+        ScoreText.text = $"Score: {_currentScore}";
+
         if (!_canClick || !_clickAction.WasCompletedThisFrame())
             return;
 

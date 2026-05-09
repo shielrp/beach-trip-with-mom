@@ -9,6 +9,7 @@ public class Hand : MonoBehaviour
     public float CloseEnoughDistance;
     public Joint2D HoldJoint;
     public Rigidbody2D MoveRigidbody;
+    public Transform DroppedObjectParent;
     public bool LockYMovement;
 
     public float HandHiddenHeight;
@@ -111,7 +112,8 @@ public class Hand : MonoBehaviour
         Debug.Log($"Detached object {_attachedDropObject.gameObject.name}");
 
         HoldJoint.connectedBody = null;
-        _attachedDropObject.transform.SetParent(null);
+        _attachedDropObject.transform.SetParent(DroppedObjectParent);
+        _attachedDropObject.Drop();
         _attachedDropObject = null;
     }
 }
