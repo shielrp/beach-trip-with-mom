@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 092f18a6bfe004b41bb8a0333302fdd2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 266535467297015977
+    second: howToPlayText_0
+  - first:
+      213: 5408438832802421849
+    second: howToPlayText_1
+  - first:
+      213: 477470992249110108
+    second: howToPlayText_2
+  - first:
+      213: 162326211095526260
+    second: howToPlayText_3
+  - first:
+      213: 4635125181466614108
+    second: howToPlayText_4
+  - first:
+      213: -8218134762921223433
+    second: howToPlayText_5
+  - first:
+      213: 454604516769526744
+    second: howToPlayText_6
+  - first:
+      213: 4616112883712698187
+    second: howToPlayText_7
+  - first:
+      213: -210136541948601208
+    second: howToPlayText_8
+  - first:
+      213: -145483406903395683
+    second: howToPlayText_9
+  - first:
+      213: 8069025540757308168
+    second: howToPlayText_10
+  - first:
+      213: -4300885367603987325
+    second: howToPlayText_11
+  - first:
+      213: 1935705913521394418
+    second: howToPlayText_12
+  - first:
+      213: 3779014450008682946
+    second: howToPlayText_13
+  - first:
+      213: -4831102025935241317
+    second: howToPlayText_14
+  - first:
+      213: 3300782548655336717
+    second: howToPlayText_15
+  - first:
+      213: 6916495459251121782
+    second: howToPlayText_16
+  - first:
+      213: -5522625915591343016
+    second: howToPlayText_17
+  - first:
+      213: 5634755021048290468
+    second: howToPlayText_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: howToPlayText_0
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 166
+        width: 200
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a80848689ce2b300800000000000000
+      internalID: 266535467297015977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 166
+        width: 367
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95cdd9a9672ae0b40800000000000000
+      internalID: 5408438832802421849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_2
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 150
+        width: 212
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5ebf83765150a600800000000000000
+      internalID: 477470992249110108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_3
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 166
+        width: 97
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b751634d2b04200800000000000000
+      internalID: 162326211095526260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_4
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 167
+        width: 123
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5919ca6bc5435040800000000000000
+      internalID: 4635125181466614108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_5
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 166
+        width: 97
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa9ac389f153fd80800000000000000
+      internalID: -8218134762921223433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_6
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 150
+        width: 290
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3f55f36641f4600800000000000000
+      internalID: 454604516769526744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_7
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 16
+        width: 131
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47acc4e53abf0040800000000000000
+      internalID: 4616112883712698187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 4
+        width: 191
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c13deade1751df0800000000000000
+      internalID: -210136541948601208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_9
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 16
+        width: 171
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a3fcabc932bfdf0800000000000000
+      internalID: -145483406903395683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_10
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 16
+        width: 194
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803c4605affeaff60800000000000000
+      internalID: 8069025540757308168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_11
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 4
+        width: 154
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38cf9449b8f2054c0800000000000000
+      internalID: -4300885367603987325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_12
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 17
+        width: 144
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2d015c5420dda10800000000000000
+      internalID: 1935705913521394418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_13
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 16
+        width: 263
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1f5d5ce91c17430800000000000000
+      internalID: 3779014450008682946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_14
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 17
+        width: 69
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9fb57ebd4a74fcb0800000000000000
+      internalID: -4831102025935241317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_15
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 4
+        width: 195
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0de86d5d3cbecd20800000000000000
+      internalID: 3300782548655336717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_16
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 16
+        width: 109
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ee34b99f35cff50800000000000000
+      internalID: 6916495459251121782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_17
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 17
+        width: 69
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854cfc96df0bb53b0800000000000000
+      internalID: -5522625915591343016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: howToPlayText_18
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 16
+        width: 157
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac9ee166dba23e40800000000000000
+      internalID: 5634755021048290468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      howToPlayText_0: 266535467297015977
+      howToPlayText_1: 5408438832802421849
+      howToPlayText_10: 8069025540757308168
+      howToPlayText_11: -4300885367603987325
+      howToPlayText_12: 1935705913521394418
+      howToPlayText_13: 3779014450008682946
+      howToPlayText_14: -4831102025935241317
+      howToPlayText_15: 3300782548655336717
+      howToPlayText_16: 6916495459251121782
+      howToPlayText_17: -5522625915591343016
+      howToPlayText_18: 5634755021048290468
+      howToPlayText_2: 477470992249110108
+      howToPlayText_3: 162326211095526260
+      howToPlayText_4: 4635125181466614108
+      howToPlayText_5: -8218134762921223433
+      howToPlayText_6: 454604516769526744
+      howToPlayText_7: 4616112883712698187
+      howToPlayText_8: -210136541948601208
+      howToPlayText_9: -145483406903395683
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

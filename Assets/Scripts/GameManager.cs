@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     public Animator UiAnimator;
     public Button EndButton;
 
+    public Image ScreenshotImage;
+
     public CastleHeightReader CastleHeight;
 
     InputAction _clickAction;
@@ -40,7 +43,7 @@ public class GameManager : MonoBehaviour
         ScoreText.text = $"height: 0' 0\"";
 
         TimeSpan timeLeft = new TimeSpan(0, 0, _roundTimeSeconds);
-        TimeLeftTMP.text = $"time left: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
+        TimeLeftTMP.text = $"time until high tide: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
         StartButton.onClick.AddListener(OnStartButtonPressed);
         EndButton.onClick.AddListener(OnEndButtonPressed);
     }
@@ -86,14 +89,15 @@ public class GameManager : MonoBehaviour
             CurrentState = State.Ending;
             Hand.SetActive(false);
             _ = Hand.SetShowing(false);
-            EndButton.gameObject.SetActive(true);
 
             _currentScore = CastleHeight.GetWorldHeightOfCastle();
 
             int feet = Mathf.FloorToInt(_currentScore);
             int inches = Mathf.RoundToInt((_currentScore % 1f) * 12);
 
-            ScoreText.text = $"Height: {feet}'{inches}\"";
+            ScoreText.text = $"height: {feet}'{inches}\"";
+
+            _ = DoGameEnd();
         }
     }
 
@@ -121,7 +125,7 @@ public class GameManager : MonoBehaviour
             EndGame();
 
         TimeSpan timeLeft = new TimeSpan(0, 0, Mathf.RoundToInt(_roundTimeSeconds - timeSpent));
-        TimeLeftTMP.text = $"time left: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
+        TimeLeftTMP.text = $"time until high tide: {timeLeft.Minutes}:{timeLeft.Seconds:00}";
 
         if (!_canClick || !_clickAction.WasCompletedThisFrame())
             return;
@@ -164,5 +168,24 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Game Over!");
             AdvanceState();
         }
+    }
+
+    async Awaitable DoGameEnd()
+    {
+        await Awaitable.EndOfFrameAsync();
+
+        Texture2D screenShot = ScreenCapture.CaptureScreenshotAsTexture();
+
+        // All the following is necessary due to a Unity bug when working in Linear color space:
+
+        Texture2D newScreenShot = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        newScreenShot.SetPixels(screenShot.GetPixels());
+        newScreenShot.Apply();
+
+        Sprite spr = Sprite.Create(newScreenShot, new Rect(0, 0, newScreenShot.width, newScreenShot.height), new Vector2(0.5f, 0.5f));
+        ScreenshotImage.sprite = spr;
+
+        UiAnimator.Play("EndScreenIn");
+        EndButton.gameObject.SetActive(true);
     }
 }
