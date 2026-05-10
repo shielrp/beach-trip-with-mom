@@ -20,6 +20,7 @@ public class DropObject : MonoBehaviour
 
     [SerializeField]
     PinchPoint[] PinchPoints;
+    public ParticleSystem SandParticlesPrefab;
 
     public Transform PinchTransform => PinchPoints[_selectedPinchPoint].Location;
     public float PinchRotation => PinchPoints[_selectedPinchPoint].Rotation;
@@ -40,6 +41,10 @@ public class DropObject : MonoBehaviour
             _isFalling = false;
             _isSettled = true;
             DropObjectSettled?.Invoke(this);
+
+            //play sand particles
+            if (SandParticlesPrefab != null)
+                Instantiate(SandParticlesPrefab, collision.GetContact(0).point, Quaternion.identity);
         }
     }
 

@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Button EndButton;
     public TMP_Text FinalHeightTmp;
 
+    public Image BlackoutFadeImage;
     public Image ScreenshotImage;
 
     public CastleHeightReader CastleHeight;
@@ -61,6 +63,9 @@ public class GameManager : MonoBehaviour
 
         _impulseSource = GetComponent<CinemachineImpulseSource>();
         _audio = GetComponent<AudioSource>();
+
+        BlackoutFadeImage.gameObject.SetActive(true);
+        BlackoutFadeImage.DOFade(0f, 0.66f);
     }
 
     void OnDestroy()
@@ -91,7 +96,8 @@ public class GameManager : MonoBehaviour
 
     void ResetGame()
     {
-        SceneManager.LoadScene(0);
+        BlackoutFadeImage.DOFade(1f, 0.66f)
+            .OnComplete(() => SceneManager.LoadScene(0));
     }
 
     void AdvanceState()

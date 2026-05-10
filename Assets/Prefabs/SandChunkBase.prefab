@@ -78,7 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21874ba96d89d8741837cef0da7aea56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinchTarget: {fileID: 7886479888980413717}
+  PinchPoints: []
+  SandParticlesPrefab: {fileID: 1374996716664960651, guid: dafd31d2ab971704c87ae2aa65b7ac57, type: 3}
   Rb2d: {fileID: 3948811075154686921}
 --- !u!50 &3948811075154686921
 Rigidbody2D:

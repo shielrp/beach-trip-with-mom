@@ -220,6 +220,10 @@ PrefabInstance:
       value: 0.679
       objectReference: {fileID: 0}
     - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: SandParticles
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954724549800435905, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: PinchPoints.Array.size
       value: 1
       objectReference: {fileID: 0}
