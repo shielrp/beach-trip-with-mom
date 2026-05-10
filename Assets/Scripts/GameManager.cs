@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public CastleHeightReader CastleHeight;
 
+    public AudioClip SparkleClip;
     public AudioClip SandThumpClip;
     public AudioClip PolaroidClip;
     public AudioClip WowClip;
@@ -111,6 +112,7 @@ public class GameManager : MonoBehaviour
             _startTime = Time.time;
             CurrentState = State.Playing;
 
+            _audio.PlayOneShot(SparkleClip);
             Invoke(nameof(StartGame), 0.66f);
         }
 

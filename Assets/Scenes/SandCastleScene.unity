@@ -2929,6 +2929,7 @@ MonoBehaviour:
   BlackoutFadeImage: {fileID: 2134229726}
   ScreenshotImage: {fileID: 1825736606}
   CastleHeight: {fileID: 1922646227}
+  SparkleClip: {fileID: 8300000, guid: f5ab76f3e905304469f199c12c255861, type: 3}
   SandThumpClip: {fileID: 8300000, guid: d621d0bae60e4314a95c0a80dea1ace0, type: 3}
   PolaroidClip: {fileID: 8300000, guid: 87fe81003a2ba164d8a04e72c4022ee6, type: 3}
   WowClip: {fileID: 8300000, guid: f238147b935b5114e8ba9cac45380dbb, type: 3}
