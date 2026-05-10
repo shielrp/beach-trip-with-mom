@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip SandThumpClip;
     public AudioClip PolaroidClip;
+    public AudioClip WowClip;
 
     InputAction _clickAction;
     bool _canClick = false;
@@ -224,5 +225,6 @@ public class GameManager : MonoBehaviour
 
         UiAnimator.Play("EndScreenIn");
         _audio.PlayOneShot(PolaroidClip);
+        _audio.PlayOneShot(WowClip);
     }
 }
