@@ -185,6 +185,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_Size.x
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_Size.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 16cc84bc46cc02642941e21447aff41e, type: 3}
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -227,23 +243,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Size.x
-      value: 0.7421875
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Size.y
-      value: 1.359375
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7341407202210888751, guid: 2ee434d8aded4da4baa1d8c8aa202f40, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ee434d8aded4da4baa1d8c8aa202f40, type: 3}
+    - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7042842171741854483, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Name
-      value: SandTower4
+      value: SandDoor
       objectReference: {fileID: 0}
     - target: {fileID: 7886479888980413717, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalPosition.y

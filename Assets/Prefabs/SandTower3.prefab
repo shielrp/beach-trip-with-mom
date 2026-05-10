@@ -257,6 +257,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b7a181198a13ae94baab05fec7036530, type: 3}
+    - target: {fileID: 4127033397394954941, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777111901117407876, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -299,16 +311,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Size.x
-      value: 0.7421875
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Size.y
-      value: 1.359375
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2801409215071612346, guid: 75513c9f57c7b494f9a67a82a8c991a9, type: 3}
+      objectReference: {fileID: 21300000, guid: 75513c9f57c7b494f9a67a82a8c991a9, type: 3}
     - target: {fileID: 6107685169721471891, guid: 1e97009a6d7b67d478d97f27900e50f0, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

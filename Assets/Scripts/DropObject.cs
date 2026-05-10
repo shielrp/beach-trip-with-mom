@@ -21,6 +21,7 @@ public class DropObject : MonoBehaviour
     [SerializeField]
     PinchPoint[] PinchPoints;
     public ParticleSystem SandParticlesPrefab;
+    public GameObject GlowEffect;
 
     public Transform PinchTransform => PinchPoints[_selectedPinchPoint].Location;
     public float PinchRotation => PinchPoints[_selectedPinchPoint].Rotation;
@@ -51,6 +52,7 @@ public class DropObject : MonoBehaviour
     public void Drop()
     {
         _isFalling = true;
+        GlowEffect.SetActive(false);
     }
 
     public bool IsSettled()
